@@ -47,6 +47,10 @@
     nav a:focus {
       text-decoration: underline;
     }
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+      cursor: default;
+    }
     section h2 {
       border-bottom: 2px solid #d9534f;
       padding-bottom: 6px;
@@ -98,8 +102,9 @@
   </header>
 
   <nav>
-    <a href="index.html">Главная</a>
+    <a href="index.html" aria-current="page">Главная</a>
     <a href="order.html">Заказать и оплатить</a>
+    <a href="careers.html">Вакансии</a>
   </nav>
 
   <section>
