@@ -47,6 +47,10 @@
     nav a:focus {
       text-decoration: underline;
     }
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+      cursor: default;
+    }
     form {
       background: white;
       padding: 20px;
@@ -106,6 +110,7 @@
   <nav>
     <a href="index.html">Главная</a>
     <a href="order.html" aria-current="page">Заказать и оплатить</a>
+    <a href="careers.html">Вакансии</a>
   </nav>
 
   <form id="orderForm" aria-label="Форма заказа просроченных продуктов">
@@ -155,14 +160,10 @@
       const quantity = form.quantity.value;
       const payment = form.payment.value;
 
-      // Простая валидация (базовая, т.к. required уже есть)
       if (!name || !email || !product || !quantity || !payment) {
         confirmation.style.display = 'none';
         return;
       }
-
-      // Здесь могла бы быть отправка данных на сервер,
-      // но для демонстрации просто показываем подтверждение
 
       confirmation.textContent = `Спасибо, ${name}! Ваш заказ ${quantity} шт. "${product}" принят. Вы выбрали оплату: ${payment === 'card' ? 'Банковская карта' : payment === 'cash' ? 'Наличные при получении' : 'Онлайн-кошелек'}.`;
       confirmation.style.display = 'block';
