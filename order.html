@@ -1,0 +1,176 @@
+<!-- order.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Заказать и оплатить — Шестёрочка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header img.logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      color: #d9534f;
+      margin: 0 0 5px;
+    }
+    header p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 0;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      color: #d9534f;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover,
+    button:focus {
+      background-color: #c9302c;
+    }
+    .confirmation {
+      margin-top: 20px;
+      background-color: #dff0d8;
+      border: 1px solid #d0e9c6;
+      padding: 15px;
+      border-radius: 5px;
+      color: #3c763d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.ibb.co/FbpVSJdj/278b788f-b57e-45e0-89a5-e01708f1429f.jpg" alt="Логотип Шестёрочка" class="logo" />
+    <h1>Заказать и оплатить</h1>
+    <p>Выберите просроченные продукты и оформите заказ</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="order.html" aria-current="page">Заказать и оплатить</a>
+  </nav>
+
+  <form id="orderForm" aria-label="Форма заказа просроченных продуктов">
+    <label for="name">Ваше имя</label>
+    <input type="text" id="name" name="name" required autocomplete="name" />
+
+    <label for="email">Электронная почта</label>
+    <input type="email" id="email" name="email" required autocomplete="email" />
+
+    <label for="product">Выберите продукт</label>
+    <select id="product" name="product" required>
+      <option value="" disabled selected>-- Выберите продукт --</option>
+      <option value="Молочные продукты">Молочные продукты</option>
+      <option value="Хлеб и выпечка">Хлеб и выпечка</option>
+      <option value="Консервы">Консервы</option>
+      <option value="Напитки">Напитки</option>
+      <option value="Сыры и колбасы">Сыры и колбасы</option>
+    </select>
+
+    <label for="quantity">Количество (шт.)</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+
+    <label for="payment">Способ оплаты</label>
+    <select id="payment" name="payment" required>
+      <option value="" disabled selected>-- Выберите способ оплаты --</option>
+      <option value="card">Банковская карта</option>
+      <option value="cash">Наличные при получении</option>
+      <option value="online">Онлайн-кошелек</option>
+    </select>
+
+    <button type="submit">Оплатить</button>
+  </form>
+
+  <div class="confirmation" role="alert" aria-live="polite" id="confirmationMessage"></div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const confirmation = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Собираем данные
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const product = form.product.value;
+      const quantity = form.quantity.value;
+      const payment = form.payment.value;
+
+      // Простая валидация (базовая, т.к. required уже есть)
+      if (!name || !email || !product || !quantity || !payment) {
+        confirmation.style.display = 'none';
+        return;
+      }
+
+      // Здесь могла бы быть отправка данных на сервер,
+      // но для демонстрации просто показываем подтверждение
+
+      confirmation.textContent = `Спасибо, ${name}! Ваш заказ ${quantity} шт. "${product}" принят. Вы выбрали оплату: ${payment === 'card' ? 'Банковская карта' : payment === 'cash' ? 'Наличные при получении' : 'Онлайн-кошелек'}.`;
+      confirmation.style.display = 'block';
+
+      form.reset();
+      form.product.selectedIndex = 0;
+      form.payment.selectedIndex = 0;
+    });
+  </script>
+</body>
+</html>
