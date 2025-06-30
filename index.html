@@ -1,193 +1,21 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Шестёрочка — Магазин просроченных продуктов</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      color: #333;
-      background: #fafafa;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    header img.logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 15px;
-    }
-    header h1 {
-      color: #d9534f;
-      margin: 0 0 5px;
-    }
-    header p {
-      font-size: 18px;
-      color: #555;
-      margin-top: 0;
-    }
-    nav {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    nav a {
-      color: #d9534f;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-      font-size: 16px;
-    }
-    nav a:hover,
-    nav a:focus {
-      text-decoration: underline;
-    }
-    nav a[aria-current="page"] {
-      text-decoration: underline;
-      cursor: default;
-    }
-    section h2 {
-      border-bottom: 2px solid #d9534f;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
-    }
-    ul {
-      list-style: disc inside;
-      margin-bottom: 15px;
-    }
-    .faq-item {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: bold;
-      color: #d9534f;
-    }
-    .faq-answer {
-      margin-top: 8px;
-      display: none;
-      color: #444;
-    }
-    button.toggle-btn {
-      background-color: #d9534f;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 14px;
-      color: #999;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Семейный сайт</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/FbpVSJdj/278b788f-b57e-45e0-89a5-e01708f1429f.jpg" alt="Логотип Шестёрочка" class="logo" />
-    <h1>Шестёрочка</h1>
-    <p>Ваш магазин просроченных продуктов — только у нас!</p>
-  </header>
-
-  <nav>
-    <a href="index.html" aria-current="page">Главная</a>
-    <a href="order.html">Заказать и оплатить</a>
-    <a href="careers.html">Вакансии</a>
-  </nav>
-
-  <section>
-    <h2>Наши товары</h2>
-    <p>В "Шестёрочке" вы найдёте широкий ассортимент продуктов с истёкшим сроком годности:</p>
-    <ul>
-      <li>Молочные продукты</li>
-      <li>Хлеб и выпечка</li>
-      <li>Консервы</li>
-      <li>Напитки</li>
-      <li>Сыры и колбасы</li>
-    </ul>
-    <p>Все товары продаются с максимальной скидкой и предназначены для творческих проектов, переработки и экспериментов.</p>
-  </section>
-
-  <section>
-    <h2>FAQ</h2>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Почему вы продаёте только просроченные продукты?
-        <button class="toggle-btn" aria-expanded="false">Показать ответ</button>
-      </div>
-      <div class="faq-answer" role="region" aria-hidden="true">
-        Из-за санкций! Это всё Америка, Байден и прочие. Мы вынуждены продавать просрочку, потому что нормальные поставки стали невозможны.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Безопасно ли покупать у вас продукты?
-        <button class="toggle-btn" aria-expanded="false">Показать ответ</button>
-      </div>
-      <div class="faq-answer" role="region" aria-hidden="true">
-        Мы рекомендуем использовать наши продукты только не для еды, а для других целей, так как они просрочены и не гарантируем их безопасность для употребления.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Можно ли вернуть товар?
-        <button class="toggle-btn" aria-expanded="false">Показать ответ</button>
-      </div>
-      <div class="faq-answer" role="region" aria-hidden="true">
-        Так как все товары просрочены, возврат и обмен не предусмотрены.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        Где находится ваш магазин?
-        <button class="toggle-btn" aria-expanded="false">Показать ответ</button>
-      </div>
-      <div class="faq-answer" role="region" aria-hidden="true">
-        Мы — онлайн-магазин, доставка по всей России.
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Шестёрочка — Магазин просроченных продуктов
-  </footer>
-
-  <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const btn = item.querySelector('button.toggle-btn');
-      const answer = item.querySelector('.faq-answer');
-
-      btn.addEventListener('click', () => {
-        const isOpen = answer.style.display === 'block';
-        if (isOpen) {
-          answer.style.display = 'none';
-          btn.textContent = 'Показать ответ';
-          btn.setAttribute('aria-expanded', 'false');
-          answer.setAttribute('aria-hidden', 'true');
-        } else {
-          answer.style.display = 'block';
-          btn.textContent = 'Скрыть ответ';
-          btn.setAttribute('aria-expanded', 'true');
-          answer.setAttribute('aria-hidden', 'false');
-        }
-      });
-    });
-  </script>
+    <iframe src="https://gpt-chatbot.ru/chat-gpt-ot-openai-dlya-generacii-teksta"></iframe>
 </body>
 </html>
