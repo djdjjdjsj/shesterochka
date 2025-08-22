@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шестерочка – элитные просроченные продукты</title>
+    <style>
+        /* Стили остаются прежними */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #ff6b6b;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5em;
+        }
+        .tagline {
+            font-style: italic;
+            color: #ffe66d;
+            margin-top: 5px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .about {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .faq {
+            margin-top: 40px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 15px;
+            background: #f4f4f4;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 15px;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        .arrow.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.ibb.co/Txb0v4V4/278b788f-b57e-45e0-89a5-e01708f1429f.jpg" alt="Логотип Шестерочка" class="logo">
+        <h1>Шестерочка</h1>
+        <p class="tagline">Элитные просроченные продукты для избранных</p>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="delivery.html">Доставка</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="about">
+            <h2>✨ О нашем магазине</h2>
+            <p>Добро пожаловать в "Шестерочку" — уникальный магазин, где мы специализируемся на эксклюзивных просроченных продуктах высшего качества! 🎯</p>
+            <p>Мы гордимся тем, что предлагаем только самые дорогие и просроченные товары, которые прошли тщательный отбор. Наша философия проста: зачем покупать свежее, если можно получить продукт с богатой историей по тройной цене? 💰</p>
+            <p>Наши клиенты — это гурманы, ценящие уникальность и эксклюзивность. Каждый продукт в "Шестерочке" имеет свою особенность и неповторимый вкус, который вы не найдете в обычных магазинах. 🍷</p>
+            <p>Мы уверены: настоящая роскошь — это возможность платить больше за то, что другие считают испорченным! 👑</p>
+        </div>
+
+        <div class="faq">
+            <h2>❓ Часто задаваемые вопросы</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Почему продукты просроченные?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Из-за санкций Байдена и Америки мы вынуждены предлагать продукты с уникальным характером. Наши поставщики не могут вовремя доставлять товары, что создает исключительную возможность для истинных ценителей!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Почему такие высокие цены?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Наши цены отражают эксклюзивность предложения! Каждый продукт проходит многомесячную "выдержку" и обладает неповторимыми качествами, которые не найти в свежих аналогах.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Безопасно ли это?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Абсолютно! Наши эксперты тщательно проверяют каждый продукт. Небольшой просрочк — это просто дополнительная ферментация, которая придает особый шарм!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Есть ли гарантия качества?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Конечно! Мы гарантируем, что все наши продукты имеют подтвержденный статус просроченности и соответствуют самым высоким стандартам дороговизны!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const arrow = element.querySelector('.arrow');
+            
+            answer.classList.toggle('active');
+            arrow.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
